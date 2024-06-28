@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unità 1 - Primi Incontri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            background-color: #31394d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .exercise-section {
+            margin: 10px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+        .exercise-title {
+            font-size: 18px;
+            color: #31394d;
+            margin-bottom: 20px;
+        }
+        .gap-box {
+            width: 100%;
+            max-width: 100px;
+            margin-left: 10px;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .actions button {
+            background-color: #31394d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .actions button:hover {
+            background-color: #005bb5;
+        }
+        .feedback {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .logo {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Unità 1 - Primi Incontri</h1>
+    </header>
+    <div class="container">
+        <div class="exercise-section">
+            <h2 class="exercise-title">Esercizio 1: Completate i dialoghi con i saluti adatti</h2>
+            <form id="exercise-form" onsubmit="return false;">
+                <ol>
+                    <li>Buonasera, Lei <input type="text" id="Gap0" class="gap-box" size="10"> Franco Platti?</li>
+                    <li>Tu <input type="text" id="Gap1" class="gap-box" size="10"> Fabio?</li>
+                    <li>Io <input type="text" id="Gap2" class="gap-box" size="10"> Anna e questo <input type="text" id="Gap3" class="gap-box" size="10"> Andrea.</li>
+                    <li>Piacere, <input type="text" id="Gap4" class="gap-box" size="10"> Luca Fossati.</li>
+                    <li>Questa <input type="text" id="Gap5" class="gap-box" size="10"> Loredana.</li>
+                    <li>(Loro) <input type="text" id="Gap6" class="gap-box" size="10"> Fabio e Milena Zucchetti.</li>
+                </ol>
+                <div class="actions">
+                    <button type="button" onclick="checkAnswers1()">Controlla</button>
+                    <button type="button" onclick="showHint1()">Aiuto</button>
+                </div>
+            </form>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+        <div class="exercise-section">
+            <h2 class="exercise-title">Esercizio 2: Completate le frasi con le forme corrette del verbo essere</h2>
+            <form id="exercise-form2" onsubmit="return false;">
+                <ol>
+                    <li>Franca <input type="text" id="Gap20" class="gap-box" size="10"> a Perugia.</li>
+                    <li>(Io) Non <input type="text" id="Gap21" class="gap-box" size="10"> inglese.</li>
+                    <li>Roberto e Claudia <input type="text" id="Gap22" class="gap-box" size="10"> a Torino.</li>
+                    <li>(Tu) <input type="text" id="Gap23" class="gap-box" size="10"> italiano?</li>
+                    <li>(Voi) <input type="text" id="Gap24" class="gap-box" size="10"> a Roma?</li>
+                    <li>(Noi) <input type="text" id="Gap25" class="gap-box" size="10"> italiano e inglese.</li>
+                    <li>Vincenzo non <input type="text" id="Gap26" class="gap-box" size="10"> qui.</li>
+                </ol>
+                <div class="actions">
+                    <button type="button" onclick="checkAnswers2()">Controlla</button>
+                    <button type="button" onclick="showHint2()">Aiuto</button>
+                </div>
+            </form>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+        <div class="exercise-section">
+            <h2 class="exercise-title">Esercizio 3: Osservate le foto e completate con i saluti</h2>
+            <form id="exercise-form3" onsubmit="return false;">
+                <ol>
+                    <li>1. <input type="text" id="Gap30" class="gap-box" size="10"> </li>
+                    <li>2. <input type="text" id="Gap31" class="gap-box" size="10"> </li>
+                    <li>3. <input type="text" id="Gap32" class="gap-box" size="10"> </li>
+                    <li>4. <input type="text" id="Gap33" class="gap-box" size="10"> </li>
+                    <li>5. <input type="text" id="Gap34" class="gap-box" size="10"> </li>
+                    <li>6. <input type="text" id="Gap35" class="gap-box" size="10"> </li>
+                </ol>
+                <div class="actions">
+                    <button type="button" onclick="checkAnswers3()">Controlla</button>
+                    <button type="button" onclick="showHint3()">Aiuto</button>
+                </div>
+            </form>
+            <div id="feedback3" class="feedback"></div>
+        </div>
+    </div>
+    <img src="logo.png" alt="Logo" class="logo">
+    <script>
+        const correctAnswers1 = [
+            'è',
+            'sei',
+            'sono',
+            'è',
+            'è',
+            'sono'
+        ];
+
+        const correctAnswers2 = [
+            'è',
+            'sono',
+            'sono',
+            'sei',
+            'siete',
+            'siamo',
+            'è'
+        ];
+
+        const correctAnswers3 = [
+            'buongiorno',
+            'ciao',
+            'arrivederci',
+            'buonasera',
+            'buona serata',
+            'salve'
+        ];
+
+        function checkAnswers1() {
+            let allCorrect = true;
+            for (let i = 0; i < correctAnswers1.length; i++) {
+                const userAnswer = document.getElementById(`Gap${i}`).value.trim();
+                if (userAnswer === correctAnswers1[i]) {
+                    document.getElementById(`Gap${i}`).style.backgroundColor = '#d4edda';
+                } else {
+                    document.getElementById(`Gap${i}`).style.backgroundColor = '#f8d7da';
+                    allCorrect = false;
+                }
+            }
+            const feedbackDiv = document.getElementById('feedback1');
+            feedbackDiv.style.display = 'block';
+            if (allCorrect) {
+                feedbackDiv.textContent = 'Giusto!';
+                feedbackDiv.className = 'feedback correct';
+            } else {
+                feedbackDiv.textContent = 'Alcune risposte sbagliate';
+                feedbackDiv.className = 'feedback incorrect';
+            }
+        }
+
+        function showHint1() {
+            for (let i = 0; i < correctAnswers1.length; i++) {
+                const inputField = document.getElementById(`Gap${i}`);
+                const userAnswer = inputField.value.trim();
+                if (userAnswer === '') {
+                    inputField.value = correctAnswers1[i][0];
+                    inputField.style.backgroundColor = '#fff3cd'; // Hint color
+                    break;
+                }
+            }
+        }
+
+        function checkAnswers2() {
+            let allCorrect = true;
+            for (let i = 0; i < correctAnswers2.length; i++) {
+                const userAnswer = document.getElementById(`Gap2${i}`).value.trim();
+                if (userAnswer === correctAnswers2[i]) {
+                    document.getElementById(`Gap2${i}`).style.backgroundColor = '#d4edda';
+                } else {
+                    document.getElementById(`Gap2${i}`).style.backgroundColor = '#f8d7da';
+                    allCorrect = false;
+                }
+            }
+            const feedbackDiv = document.getElementById('feedback2');
+            feedbackDiv.style.display = 'block';
+            if (allCorrect) {
+                feedbackDiv.textContent = 'Giusto!';
+                feedbackDiv.className = 'feedback correct';
+            } else {
+                feedbackDiv.textContent = 'Alcune risposte sbagliate';
+                feedbackDiv.className = 'feedback incorrect';
+            }
+        }
+
+        function showHint2() {
+            for (let i = 0; i < correctAnswers2.length; i++) {
+                const inputField = document.getElementById(`Gap2${i}`);
+                const userAnswer = inputField.value.trim();
+                if (userAnswer === '') {
+                    inputField.value = correctAnswers2[i][0];
+                    inputField.style.backgroundColor = '#fff3cd'; // Hint color
+                    break;
+                }
+            }
+        }
+
+        function checkAnswers3() {
+            let allCorrect = true;
+            for (let i = 0; i < correctAnswers3.length; i++) {
+                const userAnswer = document.getElementById(`Gap3${i}`).value.trim();
+                if (userAnswer === correctAnswers3[i]) {
+                    document.getElementById(`Gap3${i}`).style.backgroundColor = '#d4edda';
+                } else {
+                    document.getElementById(`Gap3${i}`).style.backgroundColor = '#f8d7da';
+                    allCorrect = false;
+                }
+            }
+            const feedbackDiv = document.getElementById('feedback3');
+            feedbackDiv.style.display = 'block';
+            if (allCorrect) {
+                feedbackDiv.textContent = 'Giusto!';
+                feedbackDiv.className = 'feedback correct';
+            } else {
+                feedbackDiv.textContent = 'Alcune risposte sbagliate';
+                feedbackDiv.className = 'feedback incorrect';
+            }
+        }
+
+        function showHint3() {
+            for (let i = 0; i < correctAnswers3.length; i++) {
+                const inputField = document.getElementById(`Gap3${i}`);
+                const userAnswer = inputField.value.trim();
+                if (userAnswer === '') {
+                    inputField.value = correctAnswers3[i][0];
+                    inputField.style.backgroundColor = '#fff3cd'; // Hint color
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
