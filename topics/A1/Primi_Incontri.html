@@ -21,9 +21,21 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
+        }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #005bb5;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
         .container {
             display: flex;
@@ -95,6 +107,7 @@
 <body>
     <header>
         <h1>Unità 1 - Primi Incontri</h1>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
     </header>
     <div class="container">
         <div class="exercise-section">
@@ -153,7 +166,7 @@
             <div id="feedback3" class="feedback"></div>
         </div>
     </div>
-    <img src="logo.png" alt="Logo" class="logo">
+    <img src="topics/A1/avatar.png" alt="Logo" class="logo">
     <script>
         const correctAnswers1 = [
             'è',
