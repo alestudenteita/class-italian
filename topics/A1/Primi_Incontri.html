@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Italian with Alessio - Livello A1</title>
+    <title>Learn Italian with Alessio - Passato Prossimo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,8 @@
             width: 100%;
             background-color: #f9f9f9;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
         }
         header {
             width: 100%;
@@ -24,65 +25,12 @@
         header h1 {
             margin: 0;
         }
-        .sidebar {
-            width: 250px;
-            background-color: #f2f2f2;
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .sidebar h2 {
-            color: #31394d;
-        }
-        .sidebar p {
-            text-align: center;
-        }
-        .sidebar .navigation {
             width: 100%;
-            margin-top: 20px;
-        }
-        .sidebar .navigation a {
-            display: block;
-            padding: 10px;
-            background-color: #31394d;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-        .sidebar .navigation a:hover {
-            background-color: #005bb5;
-        }
-        .sidebar .home-button {
-            margin-top: auto;
-            width: 100%;
-        }
-        .sidebar .home-button a {
-            display: block;
-            padding: 10px;
-            background-color: #31394d;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        .main-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .video-container {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin-bottom: 20px;
-            display: none; /* Hidden initially */
         }
         .exercise-section {
             margin: 10px;
@@ -146,236 +94,59 @@
 </head>
 <body>
     <header>
-        <h1>Learn Italian with Alessio - Livello A1</h1>
+        <h1>Learn Italian with Alessio - Passato Prossimo</h1>
     </header>
-    <div class="sidebar">
-        <h2>Introduzione</h2>
-        <p>In questa sezione imparerai le basi dell'italiano, incluse le presentazioni, l'uso del presente e le parole di base.</p>
-        <div class="navigation">
-            <a href="#presentazioni">Presentazioni</a>
-            <a href="#presente">Presente dei Verbi</a>
-            <a href="#parole">Parole di Base</a>
-        </div>
-        <div class="home-button">
-            <a href="#">Home</a>
+    <div class="container">
+        <div class="exercise-section">
+            <h2 class="exercise-title">Completa le frasi con il passato prossimo dei verbi indicati</h2>
+            <form id="exercise-form" onsubmit="return false;">
+                <ol>
+                    <li>L'incidente <input type="text" id="Gap0" class="gap-box" size="10"> (succedere) sull'autostrada.</li>
+                    <li>Ieri sera Giovanna e Sonia <input type="text" id="Gap1" class="gap-box" size="10"> (essere) al cinema.</li>
+                    <li>Ieri lei <input type="text" id="Gap2" class="gap-box" size="8"> (andare) in campagna.</li>
+                    <li>Dante Alighieri <input type="text" id="Gap3" class="gap-box" size="6"> (nascere) a Firenze nel 1265.</li>
+                    <li>Come <input type="text" id="Gap4" class="gap-box" size="11"> (diventare) difficile trovare lavoro oggi!</li>
+                    <li>Chi <input type="text" id="Gap5" class="gap-box" size="6"> (venire) ieri sera?</li>
+                    <li>Che cosa <input type="text" id="Gap6" class="gap-box" size="9"> (fare, tu) stasera?</li>
+                    <li>Carla <input type="text" id="Gap7" class="gap-box" size="8"> (dire) che ha visto molte cose in Sardegna.</li>
+                    <li>Alessandra, <input type="text" id="Gap8" class="gap-box" size="8"> (dare) una festa ieri sera?</li>
+                    <li>A vent'anni Anna <input type="text" id="Gap9" class="gap-box" size="8"> (andare) a vivere da sola.</li>
+                </ol>
+                <div class="actions">
+                    <button type="button" onclick="checkAnswers()">Controlla</button>
+                    <button type="button" onclick="showHint()">Aiuto</button>
+                </div>
+            </form>
+            <div id="feedback" class="feedback"></div>
         </div>
     </div>
-    <div class="main-content">
-        <div class="video-container" id="video-container">
-            <!-- Placeholder for video or image -->
-        </div>
-
-        <!-- Esercizi di Presentazioni -->
-        <!-- Esercizio 1: Associazione immagine-nome -->
-        <div class="exercise-section" id="presentazioni">
-            <h2 class="exercise-title">Esercizio 1: Associazione immagine-nome</h2>
-            <p>Visualizza una serie di foto e clicca sul nome corretto per ogni persona.</p>
-            <!-- Esercizio interattivo con immagini e nomi -->
-        </div>
-
-        <!-- Esercizio 2: Riempimento di spazi vuoti -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 2: Riempimento di spazi vuoti</h2>
-            <p>Leggi il dialogo tra due persone che si presentano. Completa le frasi con le parole date (nome, età, nazionalità, professione).</p>
-            <form id="exercise-riempimento" onsubmit="return false;">
-                <ol>
-                    <li>Mi chiamo <input type="text" id="Gap0" class="gap-box" size="10">.</li>
-                    <li>Ho <input type="text" id="Gap1" class="gap-box" size="2"> anni.</li>
-                    <li>Vivo a <input type="text" id="Gap2" class="gap-box" size="10">.</li>
-                    <li>Sono <input type="text" id="Gap3" class="gap-box" size="10"> (nazionalità).</li>
-                    <li>Faccio il/la <input type="text" id="Gap4" class="gap-box" size="10"> di professione.</li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkRiempimento()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-riempimento" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 3: Creazione di un profilo -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 3: Creazione di un profilo</h2>
-            <p>Inserisci i tuoi dati (nome, età, nazionalità, professione, hobby) in un modulo. Una volta completato, il modulo genererà un profilo che potrai condividere con i tuoi compagni di classe per confrontare i profili.</p>
-            <form id="exercise-profilo" onsubmit="return false;">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" class="gap-box" size="10"><br>
-                <label for="eta">Età:</label>
-                <input type="text" id="eta" name="eta" class="gap-box" size="2"><br>
-                <label for="nazionalita">Nazionalità:</label>
-                <input type="text" id="nazionalita" name="nazionalita" class="gap-box" size="10"><br>
-                <label for="professione">Professione:</label>
-                <input type="text" id="professione" name="professione" class="gap-box" size="10"><br>
-                <label for="hobby">Hobby:</label>
-                <input type="text" id="hobby" name="hobby" class="gap-box" size="20"><br>
-                <div class="actions">
-                    <button type="button" onclick="generateProfile()">Genera Profilo</button>
-                </div>
-            </form>
-            <div id="profile-output" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 4: Risposte multiple -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 4: Risposte multiple</h2>
-            <p>Leggi le domande e scegli la risposta corretta tra le opzioni fornite.</p>
-            <form id="exercise-multiple" onsubmit="return false;">
-                <ol>
-                    <li>Qual è il tuo nome?<br>
-                        <input type="radio" id="q1a1" name="q1" value="Luca"><label for="q1a1">Luca</label><br>
-                        <input type="radio" id="q1a2" name="q1" value="Maria"><label for="q1a2">Maria</label><br>
-                        <input type="radio" id="q1a3" name="q1" value="Giulia"><label for="q1a3">Giulia</label><br>
-                    </li>
-                    <li>Quanti anni hai?<br>
-                        <input type="radio" id="q2a1" name="q2" value="20"><label for="q2a1">20</label><br>
-                        <input type="radio" id="q2a2" name="q2" value="25"><label for="q2a2">25</label><br>
-                        <input type="radio" id="q2a3" name="q2" value="30"><label for="q2a3">30</label><br>
-                    </li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkMultiple()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-multiple" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 5: Dialogo vero o falso -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 5: Dialogo vero o falso</h2>
-            <p>Leggi il dialogo e indica se le affermazioni sono vere o false.</p>
-            <div>
-                <p>Marco: Ciao, sono Marco e ho 25 anni.</p>
-                <p>Lisa: Ciao Marco, io sono Lisa e sono italiana.</p>
-            </div>
-            <form id="exercise-truefalse" onsubmit="return false;">
-                <ol>
-                    <li>Marco ha 25 anni.<br>
-                        <input type="radio" id="q3a1" name="q3" value="true"><label for="q3a1">Vero</label><br>
-                        <input type="radio" id="q3a2" name="q3" value="false"><label for="q3a2">Falso</label><br>
-                    </li>
-                    <li>Lisa è spagnola.<br>
-                        <input type="radio" id="q4a1" name="q4" value="true"><label for="q4a1">Vero</label><br>
-                        <input type="radio" id="q4a2" name="q4" value="false"><label for="q4a2">Falso</label><br>
-                    </li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkTrueFalse()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-truefalse" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 6: Riordino di sequenze -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 6: Riordino di sequenze</h2>
-            <p>Trascina le frasi nel giusto ordine per completare il dialogo.</p>
-            <div id="exercise-sequenze">
-                <div class="course" draggable="true">Marco: Ciao, sono Marco.</div>
-                <div class="course" draggable="true">Lisa: Ciao Marco, io sono Lisa.</div>
-                <div class="course" draggable="true">Marco: Piacere di conoscerti, Lisa.</div>
-                <div class="course" draggable="true">Lisa: Piacere mio, Marco.</div>
-            </div>
-            <div class="actions">
-                <button type="button" onclick="checkSequenze()">Controlla</button>
-            </div>
-            <div id="feedback-sequenze" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 7: Identificazione delle nazionalità -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 7: Identificazione delle nazionalità</h2>
-            <p>Leggi le descrizioni e scegli la nazionalità corretta.</p>
-            <form id="exercise-nazionalita" onsubmit="return false;">
-                <ol>
-                    <li>Giulia è nata a Roma. È <input type="text" id="Gap5" class="gap-box" size="10">.</li>
-                    <li>Pedro è nato a Madrid. È <input type="text" id="Gap6" class="gap-box" size="10">.</li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkNazionalita()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-nazionalita" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 8: Associazione professione-hobby -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 8: Associazione professione-hobby</h2>
-            <p>Leggi le descrizioni e associa le professioni agli hobby corretti.</p>
-            <form id="exercise-professioni" onsubmit="return false;">
-                <ol>
-                    <li>Mario è un <input type="text" id="Gap7" class="gap-box" size="10">. Nel tempo libero gli piace dipingere.</li>
-                    <li>Anna è una <input type="text" id="Gap8" class="gap-box" size="10">. Nel tempo libero le piace correre.</li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkProfessioni()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-professioni" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 9: Creazione di frasi -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 9: Creazione di frasi</h2>
-            <p>Inserisci le parole mancanti per completare le frasi.</p>
-            <form id="exercise-frasi" onsubmit="return false;">
-                <ol>
-                    <li>Mi chiamo <input type="text" id="Gap9" class="gap-box" size="10"> e sono <input type="text" id="Gap10" class="gap-box" size="10">.</li>
-                    <li>Ho <input type="text" id="Gap11" class="gap-box" size="2"> anni e lavoro come <input type="text" id="Gap12" class="gap-box" size="10">.</li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkFrasi()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-frasi" class="feedback"></div>
-        </div>
-
-        <!-- Esercizio 10: Quiz di verifica -->
-        <div class="exercise-section">
-            <h2 class="exercise-title">Esercizio 10: Quiz di verifica</h2>
-            <p>Rispondi alle domande per verificare le tue conoscenze sulle presentazioni.</p>
-            <form id="exercise-quiz" onsubmit="return false;">
-                <ol>
-                    <li>Qual è il tuo nome?<br>
-                        <input type="radio" id="q5a1" name="q5" value="Giulia"><label for="q5a1">Giulia</label><br>
-                        <input type="radio" id="q5a2" name="q5" value="Luca"><label for="q5a2">Luca</label><br>
-                        <input type="radio" id="q5a3" name="q5" value="Maria"><label for="q5a3">Maria</label><br>
-                    </li>
-                    <li>Quanti anni hai?<br>
-                        <input type="radio" id="q6a1" name="q6" value="20"><label for="q6a1">20</label><br>
-                        <input type="radio" id="q6a2" name="q6" value="25"><label for="q6a2">25</label><br>
-                        <input type="radio" id="q6a3" name="q6" value="30"><label for="q6a3">30</label><br>
-                    </li>
-                </ol>
-                <div class="actions">
-                    <button type="button" onclick="checkQuiz()">Controlla</button>
-                </div>
-            </form>
-            <div id="feedback-quiz" class="feedback"></div>
-        </div>
-    </div>
-    <img src="/images/avatar.png" alt="Logo" class="logo">
-
+    <img src="avatar.png" alt="Logo" class="logo">
     <script>
-        const riempimentoAnswers = ["", "", "", "", ""];
-        const multipleAnswers = ["Luca", "25"];
-        const trueFalseAnswers = ["true", "false"];
-        const sequenzeAnswers = ["Marco: Ciao, sono Marco.", "Lisa: Ciao Marco, io sono Lisa.", "Marco: Piacere di conoscerti, Lisa.", "Lisa: Piacere mio, Marco."];
-        const nazionalitaAnswers = ["italiana", "spagnola"];
-        const professioniAnswers = ["ingegnere", "medico"];
-        const frasiAnswers = ["Giulia", "italiana", "30", "insegnante"];
-        const quizAnswers = ["Giulia", "25"];
+        const correctAnswers = [
+            'è successo',
+            'sono state',
+            'è andata',
+            'è nato',
+            'è diventato',
+            'è venuto',
+            'hai fatto',
+            'ha detto',
+            'hai dato',
+            'è andata'
+        ];
 
-        function checkRiempimento() {
+        function checkAnswers() {
             let allCorrect = true;
-            for (let i = 0; i < riempimentoAnswers.length; i++) {
+            for (let i = 0; i < correctAnswers.length; i++) {
                 const userAnswer = document.getElementById(`Gap${i}`).value.trim();
-                if (userAnswer === riempimentoAnswers[i]) {
+                if (userAnswer === correctAnswers[i]) {
                     document.getElementById(`Gap${i}`).style.backgroundColor = '#d4edda';
                 } else {
                     document.getElementById(`Gap${i}`).style.backgroundColor = '#f8d7da';
                     allCorrect = false;
                 }
             }
-            const feedbackDiv = document.getElementById('feedback-riempimento');
+            const feedbackDiv = document.getElementById('feedback');
             feedbackDiv.style.display = 'block';
             if (allCorrect) {
                 feedbackDiv.textContent = 'Giusto!';
@@ -386,196 +157,16 @@
             }
         }
 
-        function checkMultiple() {
-            let allCorrect = true;
-            for (let i = 0; i < multipleAnswers.length; i++) {
-                const radios = document.getElementsByName(`q${i + 1}`);
-                let answerFound = false;
-                for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        if (radios[j].value === multipleAnswers[i]) {
-                            radios[j].parentElement.style.backgroundColor = '#d4edda';
-                        } else {
-                            radios[j].parentElement.style.backgroundColor = '#f8d7da';
-                            allCorrect = false;
-                        }
-                        answerFound = true;
-                    }
-                }
-                if (!answerFound) {
-                    allCorrect = false;
+        function showHint() {
+            for (let i = 0; i < correctAnswers.length; i++) {
+                const inputField = document.getElementById(`Gap${i}`);
+                const userAnswer = inputField.value.trim();
+                if (userAnswer === '') {
+                    inputField.value = correctAnswers[i][0];
+                    inputField.style.backgroundColor = '#fff3cd'; // Hint color
+                    break;
                 }
             }
-            const feedbackDiv = document.getElementById('feedback-multiple');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkTrueFalse() {
-            let allCorrect = true;
-            for (let i = 0; i < trueFalseAnswers.length; i++) {
-                const radios = document.getElementsByName(`q${i + 3}`);
-                let answerFound = false;
-                for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        if (radios[j].value === trueFalseAnswers[i]) {
-                            radios[j].parentElement.style.backgroundColor = '#d4edda';
-                        } else {
-                            radios[j].parentElement.style.backgroundColor = '#f8d7da';
-                            allCorrect = false;
-                        }
-                        answerFound = true;
-                    }
-                }
-                if (!answerFound) {
-                    allCorrect = false;
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-truefalse');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkSequenze() {
-            let allCorrect = true;
-            const elements = document.getElementById('exercise-sequenze').children;
-            for (let i = 0; i < elements.length; i++) {
-                if (elements[i].textContent.trim() !== sequenzeAnswers[i]) {
-                    elements[i].style.backgroundColor = '#f8d7da';
-                    allCorrect = false;
-                } else {
-                    elements[i].style.backgroundColor = '#d4edda';
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-sequenze');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkNazionalita() {
-            let allCorrect = true;
-            for (let i = 0; i < nazionalitaAnswers.length; i++) {
-                const userAnswer = document.getElementById(`Gap${i + 5}`).value.trim();
-                if (userAnswer === nazionalitaAnswers[i]) {
-                    document.getElementById(`Gap${i + 5}`).style.backgroundColor = '#d4edda';
-                } else {
-                    document.getElementById(`Gap${i + 5}`).style.backgroundColor = '#f8d7da';
-                    allCorrect = false;
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-nazionalita');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkProfessioni() {
-            let allCorrect = true;
-            for (let i = 0; i < professioniAnswers.length; i++) {
-                const userAnswer = document.getElementById(`Gap${i + 7}`).value.trim();
-                if (userAnswer === professioniAnswers[i]) {
-                    document.getElementById(`Gap${i + 7}`).style.backgroundColor = '#d4edda';
-                } else {
-                    document.getElementById(`Gap${i + 7}`).style.backgroundColor = '#f8d7da';
-                    allCorrect = false;
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-professioni');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkFrasi() {
-            let allCorrect = true;
-            for (let i = 0; i < frasiAnswers.length; i++) {
-                const userAnswer = document.getElementById(`Gap${i + 9}`).value.trim();
-                if (userAnswer === frasiAnswers[i]) {
-                    document.getElementById(`Gap${i + 9}`).style.backgroundColor = '#d4edda';
-                } else {
-                    document.getElementById(`Gap${i + 9}`).style.backgroundColor = '#f8d7da';
-                    allCorrect = false;
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-frasi');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function checkQuiz() {
-            let allCorrect = true;
-            for (let i = 0; i < quizAnswers.length; i++) {
-                const radios = document.getElementsByName(`q${i + 5}`);
-                let answerFound = false;
-                for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        if (radios[j].value === quizAnswers[i]) {
-                            radios[j].parentElement.style.backgroundColor = '#d4edda';
-                        } else {
-                            radios[j].parentElement.style.backgroundColor = '#f8d7da';
-                            allCorrect = false;
-                        }
-                        answerFound = true;
-                    }
-                }
-                if (!answerFound) {
-                    allCorrect = false;
-                }
-            }
-            const feedbackDiv = document.getElementById('feedback-quiz');
-            feedbackDiv.style.display = 'block';
-            if (allCorrect) {
-                feedbackDiv.textContent = 'Giusto!';
-                feedbackDiv.className = 'feedback correct';
-            } else {
-                feedbackDiv.textContent = 'Alcune risposte sbagliate';
-                feedbackDiv.className = 'feedback incorrect';
-            }
-        }
-
-        function generateProfile() {
-            const nome = document.getElementById('nome').value;
-            const eta = document.getElementById('eta').value;
-            const nazionalita = document.getElementById('nazionalita').value;
-            const professione = document.getElementById('professione').value;
-            const hobby = document.getElementById('hobby').value;
-            const profileOutput = document.getElementById('profile-output');
-            profileOutput.style.display = 'block';
-            profileOutput.innerHTML = `<p>Nome: ${nome}</p><p>Età: ${eta}</p><p>Nazionalità: ${nazionalita}</p><p>Professione: ${professione}</p><p>Hobby: ${hobby}</p>`;
         }
     </script>
 </body>
