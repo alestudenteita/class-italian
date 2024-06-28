@@ -1,11 +1,3 @@
 {
-  "Wordwall": ["Impersonali", "Passato_Prossimo", "La_mia_scuola"],
-  "Flippity": ["Alle_poste", "Domande_presentazioni", "Internet_cafe"],
-  "Impariamo_Italiano": ["Imperfetto"],
-  "Pubblicità": ["Imperfetto_di_cortesia"],
-  "Dieci": ["Videocorso_A2_Come_eravamo", "Videocorso_A1_Benvenuti"],
-  "Alma_TV": ["Cero_prima_io"],
-  "Italiano_in_Onda": ["Gerundio_Passato"],
-  "Karissa": ["Riccioli_Doro_frasi", "Riccioli_Doro_parole", "Riccioli_Doro_parole_quiz"],
-  "Test": ["Pagina_con_esercizi", "Flippity", "Flippity_2"]
+  "Flippity": ["Alle_poste", "Domande_presentazioni", "Internet_cafe"]
 }
